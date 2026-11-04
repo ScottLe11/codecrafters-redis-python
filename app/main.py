@@ -8,7 +8,13 @@ def main():
     # Uncomment the code below to pass the first stage
     #
     server_socket = socket.create_server(("localhost", 6379), reuse_port=True)
-    server_socket.accept() # wait for client
+
+    # return connection and tuple of client's address (ip, port num)
+    connection, _ = server_socket.accept() # wait for client
+
+    connection.sendall(b"+P0NG\r\n")
+
+
 
 
 if __name__ == "__main__":
