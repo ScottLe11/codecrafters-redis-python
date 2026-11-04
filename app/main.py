@@ -7,8 +7,8 @@ def handle_cilent(client_socket):
         data = client_socket.recv(1024)
         if not data:
             break
-        client_socket.sendall(b"PONG\r\n")
-    
+        client_socket.sendall(b"+PONG\r\n")
+
     
 
 def main():
