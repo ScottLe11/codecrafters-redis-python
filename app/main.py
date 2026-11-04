@@ -11,8 +11,12 @@ def main():
 
     # return connection and tuple of client's address (ip, port num)
     connection, _ = server_socket.accept() # wait for client
-
-    connection.sendall(b"+PONG\r\n")
+    while True:
+        data = connection.recv(1024)
+        if not data:
+            break
+        
+        connection.sendall(b"+PONG\r\n")
 
 
 
