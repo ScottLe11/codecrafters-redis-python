@@ -12,7 +12,7 @@ def main():
     # return connection and tuple of client's address (ip, port num)
     connection, _ = server_socket.accept() # wait for client
 
-    connection.sendall(b"+P0NG\r\n")
+    connection.sendall(b"+PONG\r\n")
 
 
 
