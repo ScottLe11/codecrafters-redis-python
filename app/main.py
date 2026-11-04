@@ -3,14 +3,14 @@ import threading
 
 
 def handle_cilent(client_socket):
-    # try:
-    while(True):
-        data = client_socket.recv(1024)
-        if not data:
-            break
-        client_socket.sendall(b"+PONG\r\n")
-    # finally:
-    #     client_socket.close()
+    try:
+        while(True):
+            data = client_socket.recv(1024)
+            if not data:
+                break
+            client_socket.sendall(b"+PONG\r\n")
+    finally:
+        client_socket.close()
 
     
 
